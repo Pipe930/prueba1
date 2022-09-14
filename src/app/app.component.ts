@@ -25,7 +25,7 @@ export class AppComponent {
       apellido: 'Muñoz',
       edad: 19,
       rut: '20374782-2',
-      seccion: ''
+      seccion: 'SGY2718-18D'
     }
   ];
 
@@ -33,6 +33,13 @@ export class AppComponent {
     const idAlumno = this.alumnos.length + 1;
     alumno.id = idAlumno;
     this.alumnos.push(alumno);
-    alert("Se agrego el alumno correctamente");
+    alert("Se agrego el alumno correctamente : D");
+  }
+
+  public guardarSeccion(seccion: Seccion):void{
+    const idSeccion = this.secciones.length + 1
+    seccion.id = idSeccion;
+    this.secciones.push(seccion);
+    alert("Se agrego la seccion con exito : D")
   }
 }
