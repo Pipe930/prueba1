@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AlumnoComponent } from './componentes/alumno/alumno.component';
 import { FormularioAlumnoComponent } from './componentes/formulario-alumno/formulario-alumno.component';
 import { FormularioSeccionComponent } from './componentes/formulario-seccion/formulario-seccion.component';
+import { ListaHistorialComponent } from './componentes/lista-historial/lista-historial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlumnoComponent,
     FormularioAlumnoComponent,
-    FormularioSeccionComponent
+    FormularioSeccionComponent,
+    ListaHistorialComponent
   ],
   imports: [
     BrowserModule,
