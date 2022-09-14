@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Alumno } from './modelo/alumno';
 
+import { Seccion } from './modelo/seccion';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +11,13 @@ import { Alumno } from './modelo/alumno';
 })
 export class AppComponent {
   title = 'registroasistenciaInacap';
+
+  public secciones: Array<Seccion> = [
+    {
+      id: 1,
+      nombre: 'SGY2732-18D'
+    }
+  ];
 
   public alumnos: Array<Alumno> = [
     {
@@ -18,5 +27,12 @@ export class AppComponent {
       rut: '20374782-2',
       seccion: ''
     }
-  ]
+  ];
+
+  public guardarAlumno(alumno: Alumno):void{
+    const idAlumno = this.alumnos.length + 1;
+    alumno.id = idAlumno;
+    this.alumnos.push(alumno);
+    alert("Se agrego el alumno correctamente");
+  }
 }

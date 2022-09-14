@@ -1,28 +1,27 @@
-<p>formulario-alumno works!</p>
-
 <section class="formulario">
   <h1>Asistencia Alumno</h1>
   <div class="container-inputs">
     <fieldset>
       <label for="">Nombre</label>
-      <input type="text" name="nombre" id="">
+      <input type="text" name="nombre" (input)="agregarNombre($event)">
     </fieldset>
     <fieldset>
       <label for="">Apellido</label>
-      <input type="text" name="apellido" id="">
+      <input type="text" name="apellido" (input)="agregarApellido($event)">
     </fieldset>
     <fieldset>
       <label for="">Edad</label>
-      <input type="number" name="edad" id="">
+      <input type="number" name="edad" (input)="agregarEdad($event)">
     </fieldset>
     <fieldset>
       <label for="">RUT</label>
-      <input type="text" name="rut" id="">
+      <input type="text" name="rut" (input)="agregarRUT($event)">
     </fieldset>
     <fieldset>
-      <select name="" id="">
-        <option value="">Matematicas</option>
+      <select name="seccion" (change)="agregarSeccion($event)">
+        <option [value]="seccion.nombre" *ngFor="let seccion of listaSecciones">{{seccion.nombre}}</option>
       </select>
     </fieldset>
+    <button type="submit" (click)="agregarAlumno()">Registrar</button>
   </div>
 </section>

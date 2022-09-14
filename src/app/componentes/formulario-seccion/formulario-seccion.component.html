@@ -1,1 +1,12 @@
 <p>formulario-seccion works!</p>
+
+<section class="formulario-seccion">
+  <h2>Registrar Seccion</h2>
+  <div class="container-input">
+    <fieldset>
+      <label for="">Nombre Seccion</label>
+      <input type="text" name="nombre" (input)="agregarNombreSeccion($event)">
+    </fieldset>
+  </div>
+  <button type="submit" (click)="agregarSeccion()">Registrar</button>
+</section>
