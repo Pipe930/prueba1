@@ -15,11 +15,17 @@
   </ul>
 </nav>
 
+<h1>{{fechaStr}}</h1>
+
 <header class="encabesado">
   <h1>Registro de Asistencias de Inacap</h1>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, aliquam. Blanditiis perspiciatis, explicabo mollitia earum illum, officiis a quis quidem ipsa exercitationem odio neque ut minima nobis ratione in sit.</p>
+  </div>
 </header>
 
 <section class="container-lista-alumno">
+  <h2>Lista de Alumnos</h2>
   <app-alumno [listaAlumnos]="alumnos"></app-alumno>
 </section>
 
@@ -29,4 +35,7 @@
 
 <section class="container-form-seccion">
   <app-formulario-seccion (registrarSeccion)="guardarSeccion($event)"></app-formulario-seccion>
+</section>
+
+<section class="container-lista-historial">
 </section>

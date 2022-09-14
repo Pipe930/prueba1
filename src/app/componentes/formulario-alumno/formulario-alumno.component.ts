@@ -4,6 +4,8 @@ import { Seccion } from '../../modelo/seccion';
 
 import { Alumno } from '../../modelo/alumno';
 
+import { Historial } from '../../modelo/historial';
+
 @Component({
   selector: 'app-formulario-alumno',
   templateUrl: './formulario-alumno.component.html',
@@ -11,6 +13,9 @@ import { Alumno } from '../../modelo/alumno';
 })
 export class FormularioAlumnoComponent {
   @Output() public registrarAlumno = new EventEmitter<Alumno>();
+
+  @Output() public registrarHistorial = new EventEmitter<Historial>()
+
   @Input() public seccion!: Seccion;
   @Input() public listaSecciones!: Array<Seccion>;
 

@@ -4,6 +4,8 @@ import { Alumno } from './modelo/alumno';
 
 import { Seccion } from './modelo/seccion';
 
+import { Historial } from './modelo/historial';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +13,17 @@ import { Seccion } from './modelo/seccion';
 })
 export class AppComponent {
   title = 'registroasistenciaInacap';
+
+  public fecha1: Date = new Date();
+
+  public fechaStr: string = this.fecha1.toDateString();
+
+  public historiales: Array<Historial> = [
+    {
+      fecha: this.fecha1,
+      tipoAlumno: 'Nicolas'
+    }
+  ]
 
   public secciones: Array<Seccion> = [
     {
