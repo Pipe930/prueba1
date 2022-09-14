@@ -14,7 +14,11 @@ import { Historial } from '../../modelo/historial';
 export class FormularioAlumnoComponent {
   @Output() public registrarAlumno = new EventEmitter<Alumno>();
 
-  @Output() public registrarHistorial = new EventEmitter<Historial>()
+  @Output() public registrarHistorial = new EventEmitter<Historial>();
+
+  public fecha1: Date = new Date();
+
+  public fechaStr: string = this.fecha1.toDateString();
 
   @Input() public seccion!: Seccion;
   @Input() public listaSecciones!: Array<Seccion>;
@@ -25,6 +29,11 @@ export class FormularioAlumnoComponent {
     edad: 0,
     rut: '',
     seccion: ''
+  }
+
+  public nuevoHistoral: Historial = {
+    fecha: this.fecha1,
+    tipoAlumno: this.nuevoALumno.nombre
   }
 
   public agregarNombre(evento: Event):void{
@@ -56,6 +65,12 @@ export class FormularioAlumnoComponent {
     const copiaALumno: Alumno = {
       ...this.nuevoALumno
     }
+
+    const copiaHistorial: Historial = {
+      ...this.nuevoHistoral
+    }
+
+    this.registrarHistorial.emit(copiaHistorial);
 
     this.registrarAlumno.emit(copiaALumno);
 
