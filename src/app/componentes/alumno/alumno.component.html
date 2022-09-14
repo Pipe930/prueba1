@@ -1,1 +1,11 @@
 <p>alumno works!</p>
+
+<section class="lista-alumno" *ngFor="let alumno of listaAlumnos">
+  <article>
+    <h2>Nombre: {{alumno.nombre}}</h2>
+    <h2>Apellido: {{alumno.apellido}}</h2>
+    <h2>Edad: {{alumno.edad}}</h2>
+    <h2>RUT: {{alumno.rut}}</h2>
+    <h2>Seccion: {{alumno.seccion}}</h2>
+  </article>
+</section>
